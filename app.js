@@ -16,9 +16,6 @@ let state = { completions: {} };
 
 const habitList = document.querySelector("#habit-list");
 const template = document.querySelector("#habit-template");
-const completeCount = document.querySelector("#complete-count");
-const leftCount = document.querySelector("#left-count");
-const streakCount = document.querySelector("#streak-count");
 const resetButton = document.querySelector("#reset-day");
 const dateLabel = document.querySelector("#date-label");
 const selectedDayTitle = document.querySelector("#selected-day-title");
@@ -88,7 +85,6 @@ function render() {
     habitList.append(card);
   });
 
-  updateSummary();
 }
 
 function toggleHabit(id) {
@@ -106,17 +102,6 @@ function changeSelectedDay(offset) {
   selectedDate.setDate(selectedDate.getDate() + offset);
   selectedDate = new Date(selectedDate);
   render();
-}
-
-function updateSummary() {
-  const selectedDateKey = getSelectedDateKey();
-  const completedForDay = habits.filter((habit) => state.completions[habit.id]?.[selectedDateKey])
-    .length;
-  const bestStreak = Math.max(...habits.map((habit) => getStreakEndingOn(habit.id, selectedDate)));
-
-  completeCount.textContent = String(completedForDay);
-  leftCount.textContent = String(habits.length - completedForDay);
-  streakCount.textContent = String(bestStreak);
 }
 
 function getStreakEndingOn(id, startDate) {

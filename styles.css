@@ -71,39 +71,6 @@ h2 {
   font-size: 1.2rem;
 }
 
-.summary-strip {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  margin-bottom: 20px;
-}
-
-.summary-strip article {
-  min-width: 0;
-  padding: 13px 10px;
-  border: 1px solid rgba(29, 29, 32, 0.08);
-  border-radius: 8px;
-  background: rgba(255, 253, 248, 0.78);
-  box-shadow: 0 8px 18px rgba(48, 40, 30, 0.06);
-}
-
-.summary-strip strong,
-.summary-strip span {
-  display: block;
-}
-
-.summary-strip strong {
-  font-size: 1.35rem;
-  line-height: 1;
-}
-
-.summary-strip span {
-  margin-top: 5px;
-  color: var(--muted);
-  font-size: 0.76rem;
-  font-weight: 700;
-}
-
 .section-header {
   display: flex;
   align-items: center;
