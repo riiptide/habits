@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+data/*.json
+habit-tracker-preview.png
+.DS_Store

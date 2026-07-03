@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Habits</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="today-panel" aria-labelledby="app-title">
+        <div>
+          <p class="eyebrow" id="date-label"></p>
+          <h1 id="app-title">Daily Habits</h1>
+        </div>
+      </section>
+
+      <section class="summary-strip" aria-label="Habit summary">
+        <article>
+          <strong id="complete-count">0</strong>
+          <span>Done</span>
+        </article>
+        <article>
+          <strong id="streak-count">0</strong>
+          <span>Best streak</span>
+        </article>
+        <article>
+          <strong id="left-count">8</strong>
+          <span>Left</span>
+        </article>
+      </section>
+
+      <section class="habits-section" aria-label="Habits">
+        <div class="section-header">
+          <div class="day-nav" aria-label="Day navigation">
+            <button class="day-step" id="previous-day" type="button" aria-label="Previous day">‹</button>
+            <h2 id="selected-day-title">Today</h2>
+            <label class="calendar-picker" aria-label="Open calendar">
+              <span aria-hidden="true">▣</span>
+              <input id="date-picker" type="date" />
+            </label>
+            <button class="day-step" id="next-day" type="button" aria-label="Next day">›</button>
+          </div>
+          <button class="ghost-button" id="reset-day" type="button">Reset</button>
+        </div>
+        <div class="habit-list" id="habit-list"></div>
+      </section>
+    </main>
+
+    <template id="habit-template">
+      <article class="habit-card">
+        <button class="habit-toggle" type="button">
+          <span class="habit-icon" aria-hidden="true"></span>
+          <span class="habit-copy">
+            <strong class="habit-name"></strong>
+            <span class="habit-meta"></span>
+          </span>
+          <span class="checkmark" aria-hidden="true"></span>
+        </button>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
